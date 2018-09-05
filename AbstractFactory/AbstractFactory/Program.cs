@@ -28,6 +28,9 @@ namespace AbstractFactory
 
         static void Use(AbstractHero h1, AbstractHero h2)
         {
+            SaverSingleton saverSingleton;
+            saverSingleton = SaverSingleton.GetInstance(1);
+
             int choice1, choice2;
             Console.WriteLine("Select action for first hero: ");
             Console.WriteLine("Hit: 1");
@@ -69,6 +72,8 @@ namespace AbstractFactory
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("Second hero win");
                 Console.ReadKey();
+                saverSingleton.SaveLog("Second win");
+                Environment.Exit(0);
             }
             
 
@@ -100,6 +105,8 @@ namespace AbstractFactory
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("First hero win");
                 Console.ReadKey();
+                saverSingleton.SaveLog("First win");
+                Environment.Exit(0);
             }
             
         }
