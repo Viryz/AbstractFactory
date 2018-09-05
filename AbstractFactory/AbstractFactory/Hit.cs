@@ -8,6 +8,6 @@ namespace AbstractFactory
 {
     abstract class Hit
     {
-        public abstract void UseHit();
+        public abstract void UseHit(AbstractHero hero);
     }
 }

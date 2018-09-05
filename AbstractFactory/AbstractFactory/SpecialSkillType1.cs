@@ -12,5 +12,10 @@ namespace AbstractFactory
         {
             Console.WriteLine("Dodge");
         }
+
+        public override string ToString()
+        {
+            return "special skill: dodge\n";
+        }
     }
 }

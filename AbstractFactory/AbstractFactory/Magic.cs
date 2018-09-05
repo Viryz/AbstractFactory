@@ -8,6 +8,6 @@ namespace AbstractFactory
 {
     abstract class Magic
     {
-        public abstract void UseMagic();
+        public abstract void UseMagic(AbstractHero hero);
     }
 }

@@ -12,5 +12,10 @@ namespace AbstractFactory
         {
             Console.WriteLine("Counterattack");
         }
+
+        public override string ToString()
+        {
+            return "special skill: counterattack\n";
+        }
     }
 }

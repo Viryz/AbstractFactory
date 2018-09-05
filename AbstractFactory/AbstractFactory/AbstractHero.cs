@@ -8,6 +8,11 @@ namespace AbstractFactory
 {
     class AbstractHero
     {
+        private int health;
+
+        public int countMagic = 2;
+        public int countSpecialSkill = 1;
+
         private Magic magic;
         private Hit hit;
         private SpecialSkill skill;
@@ -18,9 +23,23 @@ namespace AbstractFactory
 
         public AbstractHero(AbstractHeroFactory factory)
         {
+            this.health = 3;
+
             magic = factory.CreateMagic();
             hit = factory.CreateHit();
             skill = factory.CreateSpecialSkill();
+        }
+
+        public void GetDamage(int damage)
+        {
+            health -= damage;
+            if (health <= 0)
+                throw new Exception("Hero is dead");
+        }
+
+        public override string ToString()
+        {
+            return "Health: " + health + "\n" + Hit.ToString() + Magic.ToString() + SpecialSkill.ToString();
         }
     }
 }

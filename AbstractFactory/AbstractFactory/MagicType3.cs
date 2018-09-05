@@ -8,9 +8,15 @@ namespace AbstractFactory
 {
     class MagicType3 : Magic
     {
-        public override void UseMagic()
+        public override void UseMagic(AbstractHero hero)
         {
+            hero.GetDamage(2);
             Console.WriteLine("Make damage");
+        }
+
+        public override string ToString()
+        {
+            return "magic: damage\n";
         }
     }
 }
